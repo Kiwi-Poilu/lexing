@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcorenti <rcorenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sobouatt <sobouatt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 12:49:53 by sobouatt          #+#    #+#             */
-/*   Updated: 2022/02/26 00:25:50 by rcorenti         ###   ########.fr       */
+/*   Updated: 2022/02/26 06:52:10 by sobouatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ static int	ft_father(t_shell *shell)
 	if (WIFEXITED(status))
 	{
 		status = WEXITSTATUS(status);
-		if (g_signal == 0)
-			g_signal = status;
+		g_signal = status;
 	}
 	return (SUCCESS);
 }
