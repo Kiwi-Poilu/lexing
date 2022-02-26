@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   binary.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sobouatt <sobouatt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rcorenti <rcorenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 11:26:41 by rcorenti          #+#    #+#             */
-/*   Updated: 2022/02/26 05:42:40 by sobouatt         ###   ########.fr       */
+/*   Updated: 2022/02/26 22:04:35 by rcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	exec_error(char *arg)
 {
+	g_signal = 127;
 	ft_putstr_fd("megashell: ", STDERR);
 	ft_putstr_fd(arg, STDERR);
 	ft_putendl_fd(": command not found", STDERR);
@@ -21,7 +22,6 @@ static void	exec_error(char *arg)
 
 static int	bin_exe_quit(char **tenv, char *path, char *arg)
 {
-	g_signal = 127;
 	exec_error(arg);
 	free_tab(tenv);
 	path = ft_memdel(path);

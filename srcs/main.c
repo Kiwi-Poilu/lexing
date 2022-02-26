@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sobouatt <sobouatt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rcorenti <rcorenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 21:51:25 by sobouatt          #+#    #+#             */
-/*   Updated: 2022/02/26 03:59:59 by sobouatt         ###   ########.fr       */
+/*   Updated: 2022/02/26 22:35:12 by rcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	do_shell( t_shell *shell)
 	t_final_command	*head;
 	char			*input;
 
+	shell->exec = 1;
 	shell->redir.i_pipe = -1;
 	input = ft_readline();
 	if (ft_strcmp(input, ""))
@@ -98,7 +99,7 @@ void	do_shell( t_shell *shell)
 				ft_free_exit(shell);
 				free_final(head);
 				free(input);
-				exit((*shell).exit);
+				exit(g_signal);
 			}
 		}
 		free_final(head);

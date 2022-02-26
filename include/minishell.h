@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sobouatt <sobouatt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rcorenti <rcorenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:18:24 by rcorenti          #+#    #+#             */
-/*   Updated: 2022/02/26 03:05:23 by sobouatt         ###   ########.fr       */
+/*   Updated: 2022/02/26 17:26:39 by rcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ typedef struct s_shell
 	int						ret;
 	int						exit;
 	int						parent;
+	int						exec;
 	t_env					*env;
 	t_redir					redir;
 }			t_shell;
