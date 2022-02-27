@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcorenti <rcorenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sobouatt <sobouatt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 21:51:25 by sobouatt          #+#    #+#             */
-/*   Updated: 2022/02/27 07:03:21 by rcorenti         ###   ########.fr       */
+/*   Updated: 2022/02/27 08:00:45 by sobouatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ void	do_shell( t_shell *shell)
 		{
 			if (minishell(shell, (*shell).env, head) == ERROR)
 			{
+				close(shell->redir.in);
+				close(shell->redir.out);
 				ft_free_exit(shell);
 				free_final(head);
 				free(input);

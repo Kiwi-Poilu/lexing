@@ -6,7 +6,7 @@
 #    By: sobouatt <sobouatt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 11:41:35 by rcorenti          #+#    #+#              #
-#    Updated: 2022/02/26 03:00:05 by sobouatt         ###   ########.fr        #
+#    Updated: 2022/02/27 07:57:33 by sobouatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ LIBFT = libft/libft.a
 
 CC = clang
 
-CFLAGS = -g -Wall -Wextra -Werror -MMD
+CFLAGS = -Wall -Wextra -Werror -MMD
  
 OBJS = ${addprefix ${SRCS}/,${SRCS1:.c=.o}} ${addprefix ${PARS}/,${SRCS2:.c=.o}} ${addprefix ${EXEC}/,${SRCS3:.c=.o}}
 DEPS = ${OBJS:%.o=%.d}
