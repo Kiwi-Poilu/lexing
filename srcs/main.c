@@ -6,7 +6,7 @@
 /*   By: rcorenti <rcorenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 21:51:25 by sobouatt          #+#    #+#             */
-/*   Updated: 2022/02/26 23:17:23 by rcorenti         ###   ########.fr       */
+/*   Updated: 2022/02/27 07:03:21 by rcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	minishell(t_shell *shell, t_env *env, t_final_command *cmd)
 	close_redir(shell);
 	init_redir(shell);
 	init_pipe(shell);
-	if (something_went_wrong(shell))
+	if (something_went_wrong(shell) == ERROR)
 		return (ERROR);
 	shell->redir.pid_pipe = ft_memdel(shell->redir.pid_pipe);
 	if (!shell->parent)
